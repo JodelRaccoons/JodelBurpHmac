@@ -7,7 +7,7 @@ It is only usable as an extension for BurpSuite.
 This tool calculates the correct HMAC value based on the given secret and version and automatically modifies the request to hopefully work.
 Additionally, it stores `access_` and `refresh_token` in Burp CookieJar and also automatically appends within the `Authorization`-header.
 
-A prebuilt version is available in the [releases section](https://github.com/JodelRaccoons/BurpHmacInterceptor/releases). 
+A prebuilt version is available in the [releases section](https://github.com/JodelRaccoons/JodelBurpHmac/releases/tag/alpha). 
 
 **This project is for educational purposes only! Do not abuse it for anything unlawful!**
 
