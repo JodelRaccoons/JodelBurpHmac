@@ -1,0 +1,159 @@
+JFDML JFormDesigner: "7.0.4.0.360" Java: "11.0.12" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:17:p, par l {seq {comp label3:::p:69:p, space s::1028:x, comp enabledCheckBox:::p::p}, seq {par l {seq {par l {par l:l {comp label2::t:p::p, comp headerValuePrefixLabel::l:p::p, comp headerNameLabel::l:p::p}, comp label1::l:p:69:p, comp label4::l:p:69:p, comp label5:::p::p}, space :p:26:p}, seq t {par l {comp label6:::p::p, comp label7:::p::p}, space s:::p}}, par l {comp locationText:::p:216:p, comp apiVersionText:::p:216:p, comp clientTypeComboBox::l:p::p, par t:l::p {comp textFieldUserAgent::l:::x, comp hmacKeyText::l:::x, comp versionText::l:p:216:p, comp userAgentComboBox::l:::x}, comp toggleReplaceAccessToken::l:p::p, comp textFieldRefreshToken::l:p:774:p, comp textFieldAccessToken::l:p:774:p, comp toggleButtonUpdateLocation::l:p::p, comp toggleButtonScrapeTokensFromResponses::l:p::p, comp toggleButtonQuickSwitch::l:p::p}, space :0:293:x}}}, comp scrollPane1::t::1179:x, seq t {comp verboseLoggingCheckbox:::p::p, space ::989:x, comp clearLogButton:::p::p}}, space :::p}}"
+			"$verticalGroup": "par l {seq {space :::p, par l {comp enabledCheckBox:::p::p, seq l {space :p:6:p, par b {comp hmacKeyText::b:p::p, comp headerNameLabel::b:p::p}, space :p:13:p, par b {comp headerValuePrefixLabel::b:p::p, comp versionText::b:p::p}}}, space u:::p, par b {comp label2::b:p:30:p, comp userAgentComboBox::b:p::p}, space :p:13:p, par b {comp label5::b:p::p, comp textFieldUserAgent::b:p::p}, space :::p, par b {comp label1::b:p:30:p, comp apiVersionText::b:p::p}, space :::p, par b {comp label3::b:p:30:p, comp clientTypeComboBox::b:p::p}, space :::p, par b {comp label4::b:p::p, comp locationText::b:p:30:p}, space :::p, comp toggleButtonUpdateLocation:::p::p, space :p:40:p, par b {comp textFieldAccessToken::b:p::p, comp label6::b:p::p}, space :::p, par b {comp textFieldRefreshToken::b:p::p, comp label7::b:p::p}, space u:::p, comp toggleReplaceAccessToken:::p::p, space :::p, comp toggleButtonScrapeTokensFromResponses:::p::p, space :::p, comp toggleButtonQuickSwitch:::p::p, space ::86:x, par b {comp verboseLoggingCheckbox::b:p::p, comp clearLogButton::b:p::p}, space :::p, comp scrollPane1::::258:x, space :::p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "headerNameLabel"
+				"text": "HMAC Key"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "versionText"
+				"text": " "
+				"toolTipText": "Enter the corresponding app version"
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 0
+				}
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "headerValuePrefixLabel"
+				"text": "Version"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "hmacKeyText"
+				"toolTipText": "Enter the HMAC key extracted from the app"
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 0
+				}
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "API Version"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "User Agent"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Client Type"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "apiVersionText"
+				"toolTipText": "Placed in the X-Api-Version header. Use \"0.2\" if you dont know what to enter."
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 0
+				}
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "verboseLoggingCheckbox"
+				"text": "Verbose logging"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "enabledCheckBox"
+				"text": "Enabled"
+				"selected": true
+				"toolTipText": "Globally enables or disables the plugins functionality."
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextPane" ) {
+					name: "logTextPane"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Location"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "locationText"
+				"toolTipText": "Placed in the X-Location header. Might be used to idendify possible fraudulent use / fake locations by the API."
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "clientTypeComboBox"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "android_%s"
+					addElement( "android_%s" )
+					addElement( "ios_%s" )
+				}
+				"toolTipText": "Placed in the X-Client-Type header, used by the server to distinguish between Android and iOS"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "clearLogButton"
+				"text": "Clear log"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "clearLogButtonActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "userAgentComboBox"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "Jodel/%s Dalvik/2.1.0 (Linux; U; Android 16; Pixel 9 Build/AAAA.123456.789)"
+					addElement( "Jodel/%s Dalvik/2.1.0 (Linux; U; Android 16; Pixel 9 Build/AAAA.123456.789)" )
+					addElement( "Jodel/%s (iPhone; iOS 14.6; Scale/2.00)" )
+					addElement( "Custom" )
+				}
+				"toolTipText": "Placed as User-Agent header. \"%s\" represents a placeholder which is filled with the app version."
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "userAgentComboBoxMouseClicked", true ) )
+				addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "userAgentComboBoxItemStateChanged", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Custom UA"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Access token"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "Refresh token"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textFieldAccessToken"
+				"toolTipText": "Contains the access_token sent in the Authorization: <token> header. Is filled as soon as any response containing a access_token is caught by Burp (Proxy or Repeater). If you have a valid access_token, you can directly fill it in."
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textFieldRefreshToken"
+				"toolTipText": "Currently not in use, if a token refresh mechanism is implemented this token could become relevant. Is filled as soon as any response containing a refresh_token is caught by Burp (Proxy or Repeater)."
+			} )
+			add( new FormComponent( "javax.swing.JToggleButton" ) {
+				name: "toggleReplaceAccessToken"
+				"text": "Replace access token: On"
+				"selected": true
+				"toolTipText": "Replace the Authorization: <token> header on all requests performed using the Repeater"
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "toggleReplaceAccessTokenStateChanged", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textFieldUserAgent"
+				"toolTipText": "Select \"Custom\" user agent in the dropdown list and enter your custom user agent here.\nInclude %s for automatic version string insertion."
+			} )
+			add( new FormComponent( "javax.swing.JToggleButton" ) {
+				name: "toggleButtonUpdateLocation"
+				"text": "Force update location: On"
+				"toolTipText": "Forefully updates the X-Location header in requests with the value set here. If disabled, the X-Location header from the previous request is taken if present."
+				"selected": true
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "toggleButtonUpdateLocationStateChanged", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JToggleButton" ) {
+				name: "toggleButtonScrapeTokensFromResponses"
+				"text": "Scrape tokens from responses: On"
+				"selected": true
+				"toolTipText": "Searches for access_token and refresh_token in responses automatically and fills them in to the above text fields."
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "toggleButtonScrapeTokensFromResponsesStateChanged", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JToggleButton" ) {
+				name: "toggleButtonQuickSwitch"
+				"text": "QuickSwitch: iOS"
+				"toolTipText": "Quickly switch between iOS and Android configurations"
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "toggleButtonQuickSwitchStateChanged", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 1185, 920 )
+			"location": new java.awt.Point( 0, 0 )
+		} )
+	}
+}

@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.jodelraccons'
+version '0.2-early-apha'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'net.portswigger.burp.extender', name: 'burp-extender-api', version: '2.3'
+
+    //required for string operations
+    implementation group: 'com.google.guava', name: 'guava', version: '31.0.1-jre'
+
+    //required as buffer
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
